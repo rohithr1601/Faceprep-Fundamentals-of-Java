@@ -1,0 +1,20 @@
+Write a program to print Hello World with tab
+
+
+Case 1
+Input (stdin)
+
+Output (stdout)
+Hello World	Hello World
+
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+class Main
+{
+  public static void main(String args[])
+  {
+    //Try out your code here
+    System.out.println("Hello World\tHello World");
+  }
+}
