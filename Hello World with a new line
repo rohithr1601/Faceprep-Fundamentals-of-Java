@@ -1,0 +1,29 @@
+Write a program to print the given sample output.
+
+
+
+Sample Output:
+
+Hello World
+
+Hello World
+
+
+Case 1
+Input (stdin)
+Hello World
+Hello World
+
+Output (stdout)
+Hello World
+Hello World
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+class Main
+{
+  public static void main(String args[])
+  {
+    System.out.println("Hello World\nHello World");
+  }
+}
