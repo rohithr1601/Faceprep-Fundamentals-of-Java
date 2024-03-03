@@ -1,0 +1,40 @@
+Write a Java program to find the greatest among the three given numbers.
+
+INPUT FORMAT:
+
+Input consists of 3 integers
+
+SAMPLE INPUT & OUTPUT:
+
+7
+
+9
+
+5
+
+9 is greater. 
+
+++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+class Main
+{
+  public static void main(String args[])
+  {
+	  Scanner in = new Scanner(System.in);
+	  int n1 = in.nextInt();
+	  int n2 = in.nextInt();
+	  int n3 = in.nextInt();
+	  int g =  n1;
+	  if(n2>g)
+	  {
+		  g = n2;
+	  }
+	  if(n3>g)
+	  {
+		  g = n3;
+	  }
+	  System.out.println(g + " is greater");
+	  in.close();
+  }
+}
