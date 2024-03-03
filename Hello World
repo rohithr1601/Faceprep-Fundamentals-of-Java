@@ -1,0 +1,19 @@
+Write a program to print "Hello, World!"
+
+
+Case 1
+Input (stdin)
+
+Output (stdout)
+"Hello, World!"
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+class Main
+{
+  public static void main(String args[])
+  {
+    //Try out your code here
+    System.out.println("\"Hello, World!\"");
+  }
+}
