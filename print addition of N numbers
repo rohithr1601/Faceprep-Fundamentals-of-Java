@@ -1,0 +1,44 @@
+Write a Java Program to print addition of N numbers.
+Given N integer numbers (user will read numbers one by one) and find sum/addition of all given numbers.
+Input format :
+
+Input consist of an Integer
+Output format:
+
+Output consist of an Integer
+Sample Input :
+
+5
+
+100
+
+200
+
+300
+
+400
+
+500
+
+Sample Output :
+
+1500
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.*;
+public class Main
+{
+    public static void main(String[] a)
+    {
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		int s = 0;
+		for (int i=0;i<n;i++)
+		{
+			int num = in.nextInt();
+			s += num;
+		}
+		System.out.println(s);
+    }
+}
