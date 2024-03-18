@@ -1,0 +1,51 @@
+There was a boy named Ziro having fun by asking the people of their's initial. If the people who has vowel character as their initial and says that to him, he just replies "WOW, Hello!", else he replies "Continue to soar higher!". If the initial is out of alphabet, then he replies "That's a weird initial! I like it!". Write a Java program to help him out to find vowels and consonants.
+
+Input Format:
+
+Input corresponds to the character.
+
+
+
+Output Format:
+
+Refer the following sample output
+
+
+
+Sample Input:
+
+E
+
+
+
+Sample Output:
+
+WOW, Hello!
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+public class Main 
+{
+    public static void main(String[] args) 
+	{
+        Scanner in = new Scanner(System.in);
+        char ch = in.next().charAt(0);
+        if (ch >= 'A' && ch <= 'Z') 
+		{
+            ch = Character.toLowerCase(ch);
+        }
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') 
+		{
+            System.out.println("WOW, Hello!");
+        }
+		else if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) 
+		{
+            System.out.println("Continue to soar higher!");
+        } 
+		else 
+		{
+            System.out.println("That's a weird initial! I like it!");
+        }
+    }
+}
