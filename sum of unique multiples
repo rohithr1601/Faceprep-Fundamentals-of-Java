@@ -1,0 +1,67 @@
+Write a Java program for the following case.
+
+Given a number, find the sum of all the unique multiples of particular numbers up to but not including that number.
+
+If we list all the natural numbers below 20 that are multiples of 3 or 5, we get 3, 5, 6, 9, 10, 12, 15, and 18.
+
+The sum of these multiples is 78.
+Input Format:
+
+All inputs corresponds to the Integer value
+
+Output Format:
+
+Output correspond to the multiplied value accordingly (Integer)
+
+
+
+Sample Input1:
+
+20
+
+3
+
+5
+
+Sample Output1:
+
+3 5 6 9 10 12 15 18
+
+78
+
++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int a = in.nextInt();
+        int b = in.nextInt();
+        if (a <= 0 || b <= 0 || n <= 0) 
+		{
+            System.out.println("Invalid Data");
+            return;
+        }
+        boolean m[] = new boolean[n];
+        for (int i = a; i < n; i += a) {
+            m[i] = true;
+		}
+        for (int i = b; i < n; i += b) {
+            m[i] = true;
+        }
+        int s = 0;
+        for (int i = 1; i < n; i++) {
+            if (m[i]) 
+			{
+                s += i;
+            }
+        }
+        for (int i = 1; i < n; i++) {
+            if (m[i]) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\n" + s);
+    }
+}
