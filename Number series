@@ -1,0 +1,52 @@
+Write a Java program for the following series 462 420 380 342 306.....
+
+
+
+Input Format:
+
+Inputs correspond to the number of terms (Integer)
+
+
+
+Output Format:
+
+Refer the sample output
+
+
+
+Sample Input1:
+
+5
+
+
+
+Sample Output1:
+
+462 420 380 342 306
+
+
+++++++++++++++++++++++++++++++++++++++
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int a = 462;
+        int d = 42;
+		if(n<=0)
+		{
+			System.out.println("Invalid Data");
+			return;
+		}
+        StringBuilder o = new StringBuilder();
+        o.append(a);
+        for (int i = 1; i < n; i++) {
+            a = a - d;
+            d = d - 2;
+            o.append(" ").append(a);
+        }
+        System.out.println(o);
+    }
+}
