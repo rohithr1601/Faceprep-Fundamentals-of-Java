@@ -1,0 +1,40 @@
+Write a Java program to find rotate a string based on given input.
+
+Note:
+
+First input is consist on String
+
+Second input is consist on Integer(based on rotation)
+
+Input format:
+
+The input consist of Integer and String
+
+Output format:
+
+The output consists of String
+
+Sample Input:
+
+Scanner
+
+4
+
+Sample Output:
+
+nnerSca
+
++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String inp = in.next();
+        int n = in.nextInt();
+        int r = inp.length() - n % inp.length();
+        String rstr = inp.substring(r) + inp.substring(0, r);
+        System.out.println(rstr);
+    }
+}
