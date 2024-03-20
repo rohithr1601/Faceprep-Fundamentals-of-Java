@@ -31,40 +31,45 @@ Sample Output:
 The given matrix is symmetric
 
 +++++++++++++++++++++++++++++++++++++++++++++++++
-
 import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        int rowSize = input.nextInt();
-        int colSize = input.nextInt();
-
-        int[][] matrix = new int[rowSize][colSize];
-
-        for (int i = 0; i < rowSize; i++) {
-            for (int j = 0; j < colSize; j++) {
-                matrix[i][j] = input.nextInt();
+public class Main 
+{
+    public static void main(String[] args) 
+	{
+        Scanner in = new Scanner(System.in);
+        int r = in.nextInt();
+        int c = in.nextInt();
+        int[][] m = new int[r][c];
+        for (int i = 0; i < r; i++) 
+		{
+            for (int j = 0; j < c; j++) 
+			{
+                m[i][j] = in.nextInt();
             }
         }
-
         boolean isSymmetric = true;
-        for (int i = 0; i < rowSize; i++) {
-            for (int j = 0; j < colSize; j++) {
-                if (matrix[i][j] != matrix[j][i]) {
+        for (int i = 0; i < r; i++) 
+		{
+            for (int j = 0; j < c; j++) 
+			{
+                if (m[i][j] != m[j][i]) 
+				{
                     isSymmetric = false;
                     break;
                 }
             }
-            if (!isSymmetric) {
+            if (!isSymmetric) 
+			{
                 break;
             }
         }
 
-        if (isSymmetric) {
+        if (isSymmetric) 
+		{
             System.out.println("The given matrix is symmetric");
-        } else {
+        } 
+		else 
+		{
             System.out.println("Row and column are not equal");
         }
     }
