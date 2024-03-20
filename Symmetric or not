@@ -1,0 +1,71 @@
+Write a Java program to check whether the given matrix is symmetric or not. Get the row size and column size of the matrix and all the elements of the matrix from the user. [Note: A symmetric matrix is a matrix which is equal to its transpose. Only square matrices are said to be symmetric].
+
+Input Format:
+
+The first line consists of row size and column size of the matrix
+
+The next line consists of all the elements of the matrix
+
+
+
+Output Format:
+
+Refer sample output for formatting specifications
+
+
+
+Sample Input;
+
+3 3
+
+7 5 1
+
+5 8 3
+
+1 3 4
+
+
+
+Sample Output:
+
+The given matrix is symmetric
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int rowSize = input.nextInt();
+        int colSize = input.nextInt();
+
+        int[][] matrix = new int[rowSize][colSize];
+
+        for (int i = 0; i < rowSize; i++) {
+            for (int j = 0; j < colSize; j++) {
+                matrix[i][j] = input.nextInt();
+            }
+        }
+
+        boolean isSymmetric = true;
+        for (int i = 0; i < rowSize; i++) {
+            for (int j = 0; j < colSize; j++) {
+                if (matrix[i][j] != matrix[j][i]) {
+                    isSymmetric = false;
+                    break;
+                }
+            }
+            if (!isSymmetric) {
+                break;
+            }
+        }
+
+        if (isSymmetric) {
+            System.out.println("The given matrix is symmetric");
+        } else {
+            System.out.println("Row and column are not equal");
+        }
+    }
+}
