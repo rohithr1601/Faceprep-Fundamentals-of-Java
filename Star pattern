@@ -1,0 +1,66 @@
+Write a program to print in a star pattern.
+
+
+
+Input Format
+
+Input consists of one integer that corresponds to the number of pattern rows.
+
+
+
+Output Format
+
+Output prints the pattern.
+
+
+
+Sample Input 0
+
+10
+
+
+
+Sample Output 0
+
+**********
+
+*********
+
+********
+
+*******
+
+******
+
+*****
+
+****
+
+***
+
+**
+
+*
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+class Main
+{
+  public static void main(String args[])
+  {
+    //Try out your code here
+	  Scanner in = new Scanner(System.in);
+	  int n = in.nextInt();
+	  for(int i=n;i>0;i--)
+	  {
+		  for(int j=1;j<=i;j++)
+		  {
+			  System.out.print("*");
+		  }
+		  System.out.println();
+	  }
+  }
+}
