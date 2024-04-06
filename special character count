@@ -1,0 +1,54 @@
+SecretMessage agency provides message encoding and decoding services for secure data transfer. The first step in decoding includes removal of special characters from the message, as special characters and whitespaces do not hold any meaning.
+
+Write an algorithm to help the agency find the number of special characters in a given message.
+
+Input
+
+The input consists of a string message, representing the message that need to be decoded by the agency.
+
+Output
+
+Print an integer representing the number of special characters present in a given message.
+
+Example
+
+Input:
+
+gasgg54@#vscsds*
+
+Output:
+
+3
+
+Explanation:
+
+The special characters having no meaning are [‘@’,’#’,’*’].
+
++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+public class Main 
+{
+    public static int cs(String m) 
+	{
+        int count = 0;
+        for (int i = 0; i < m.length(); i++) 
+		{
+            char c = m.charAt(i);
+            if (!Character.isLetterOrDigit(c) && !Character.isWhitespace(c)) 
+			{
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) 
+	{
+        Scanner in = new Scanner(System.in);
+        String m = in.nextLine();
+
+        int special = cs(m);
+        System.out.println("" + special);
+    }
+}
