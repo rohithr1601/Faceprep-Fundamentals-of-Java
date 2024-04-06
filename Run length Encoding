@@ -1,0 +1,65 @@
+Implement run-length encoding. Run-length encoding (RLE) is a simple form of data compression, where runs (consecutive data elements) are replaced by just one data value and count.
+
+
+
+"WWBWWWBBBWWWWB" -> "2WB3W3B4WB"
+
+Write a program for this to encode the characters.
+
+Sample Input1:
+
+"WWBWWWBBBWWWWB"
+
+Sample Output1:
+
+2WB3W3B4WB
+
+
+
+Sample Input2:
+
+A
+
+Sample Output2:
+
+A
+
+
+++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+public class Main 
+{
+    public static String encode(String inp) 
+	{
+        if (inp == null || inp.isEmpty())
+            return "";
+        StringBuilder es = new StringBuilder();
+        int c = 1;
+        for (int i = 1; i < inp.length(); i++) 
+		{
+            if (inp.charAt(i) == inp.charAt(i - 1)) 
+			{
+                c++;
+            } 
+			else 
+			{
+                if (c > 1)
+                    es.append(c);
+                es.append(inp.charAt(i - 1));
+                c = 1;
+            }
+        }
+        if (c > 1)
+            es.append(c);
+        es.append(inp.charAt(inp.length() - 1));
+        return es.toString();
+    }
+    public static void main(String[] args) 
+	{
+        Scanner in = new Scanner(System.in);
+        String n = in.nextLine();
+        String es = encode(n);
+        System.out.println("" + es);
+    }
+}
