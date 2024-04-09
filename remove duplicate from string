@@ -1,0 +1,46 @@
+Write a Java program to remove duplicate letters in the given string and print them in ascending order using set.
+
+
+
+Input Format:
+
+Input consists of String
+
+
+
+Output Format:
+
+Output consists of Character set.
+
+
+
+Sample Input:
+
+Iron Man
+
+
+
+Sample Output:
+
+[ , a, i, m, n, o, r]
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args) 
+	{
+        Scanner in = new Scanner(System.in);
+        String inp = in.nextLine();
+        Set<Character> uniqueChars = new TreeSet<>();
+        for (char c : inp.toCharArray()) 
+		{
+            if (Character.isLetter(c) || Character.isWhitespace(c)) 
+			{
+                uniqueChars.add(Character.toLowerCase(c));
+            }
+        }
+        System.out.println(uniqueChars);
+    }
+}
