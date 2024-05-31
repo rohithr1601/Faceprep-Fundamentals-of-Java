@@ -1,0 +1,62 @@
+Description
+
+Write a program to find the sum of digits of a number until the sum becomes a single digit.
+
+
+
+Input Format
+
+Input format consists of a number
+
+
+
+Output Format
+
+Output format consists of an integer
+
+
+
+Sample Input 0
+
+8945623
+
+
+
+Sample Output 0
+
+8
+
+
+
+
+Case 1
+Case 2
+Input (stdin)
+78945623
+
+Output (stdout)
+8
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int s = 0;
+        while (n % 10 > 0) {
+            int l = n % 10;
+            s = s + l;
+            n = n / 10;
+        }
+        int sn = 0;
+        while (s > 0) {
+            int sl = s % 10;
+            sn = sn + sl;
+            s = s / 10;
+        }
+        System.out.println(sn);
+    }
+}
