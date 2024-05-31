@@ -1,0 +1,83 @@
+Description
+
+Measurements continue to play an important role throughout everybody's life. Hari who is a sportsman has studied how to add two distances in inch feet system. Now he needs to do the programming for the same. Help him to write a program to add two distances in inch feet system using Structure
+
+Note: 1feet = 12inch
+Input Format
+
+Input 1: feet1 and Inch1
+Input 2: feet2 and Inch2
+Feet is in integer data type and inch is in float data type
+
+
+Output Format
+
+The output prints the Sum of Distance.
+
+
+
+Sample Input 0
+
+22
+
+4.7
+
+23
+
+7.9
+
+
+
+Sample Output 0
+
+﻿46'-0.6"
+
+
+
+
+
+
+Case 1
+Case 2
+Input (stdin)
+22
+4.7
+23
+7.9
+
+Output (stdout)
+46'-0.6"
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+
+public class Main {
+    static class Ad {
+        int ft;
+        float in;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Ad a = new Ad();
+        Ad b = new Ad();
+
+        a.ft = sc.nextInt();
+        a.in = sc.nextFloat();
+        b.ft = sc.nextInt();
+        b.in = sc.nextFloat();
+
+        int f = a.ft + b.ft;
+        float i = a.in + b.in;
+        while (i > 12) {
+            i = i - 12;
+            f = f + 1;
+        }
+        if (i == (int) i) {
+            System.out.printf("%d'-%d\"", f, (int) i);
+        } else {
+            System.out.printf("%d'-%.1f\"", f, i);
+        }
+    }
+}
