@@ -1,0 +1,61 @@
+Description
+
+Write a program to compute the GCD of 2 numbers using recursion.
+
+
+
+Input Format
+
+Input consists of 2 integers.
+
+
+
+Output Format
+
+Output consists of one integer that represents the GCD of two numbers.
+
+
+
+Sample Input 1
+
+36
+
+27
+
+
+
+Sample Output 0
+
+9
+
+
+Case 1
+Case 2
+Input (stdin)
+36
+27
+
+
+Output (stdout)
+9
+
+++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int r = gcd(n1, n2);
+        System.out.println(r);
+    }
+
+    public static int gcd(int a, int b) {
+        if (b == 0)
+            return a;
+        else
+            return gcd(b, a % b);
+    }
+}
