@@ -1,0 +1,76 @@
+Description
+
+Write a program to find the sum of array elements using recursion.
+
+
+
+Input Format
+
+The Input consists of one integer and a set of integers.
+The first integer corresponds to the number of array elements.
+The second Input corresponds to the array elements.
+
+
+Output Format
+
+The output consists of one integer that corresponds to the sum of the array elements.
+
+
+
+Sample Input 1
+
+5
+
+1
+
+2
+
+3
+
+4
+
+5
+
+
+
+Sample Output 1
+
+15
+
+
+Case 1
+Case 2
+Input (stdin)
+5
+1
+2
+3
+4
+5
+
+Output (stdout)
+15
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+class Main 
+{
+    public static int sumarr(int[] a, int n) 
+    {
+        if (n == 0)
+            return 0;
+        else
+            return (a[n-1] + sumarr(a, n - 1));
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++)
+            a[i] = sc.nextInt();
+        int s = sumarr(a, n);
+        System.out.println(s);
+    }
+}
