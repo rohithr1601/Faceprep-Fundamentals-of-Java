@@ -1,0 +1,99 @@
+Description
+
+Sheldon Cooper has a square-shaped puzzle made up of small square pieces containing numbers on them. He wants to rearrange the puzzle by changing the elements of a row into a column element and the column element into a row element without altering the shape of the puzzle. Help Sheldon solves this puzzle. Write a program to find the transpose of the given 2D matrix.
+
+
+
+Input Format
+
+The first line consists of an integer which represents the number of rows and columns. The next line consists of the elements in the matrix.
+
+
+
+Output Format
+
+Output prints the transpose of the input matrix.
+
+
+
+Sample Input
+
+3
+
+1 2 3
+
+4 5 6
+
+7 8 9
+
+
+
+Sample Output
+
+1 2 3
+
+4 5 6
+
+7 8 9
+
+Transpose matrix is:
+
+1 4 7
+
+2 5 8
+
+3 6 9
+
+
+Case 1
+Case 2
+Input (stdin)
+3
+1 2 3
+4 5 6
+7 8 9
+
+Output (stdout)
+1 2 3
+4 5 6
+7 8 9
+Transpose matrix is:
+1 4 7
+2 5 8
+3 6 9
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] matrix = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        int[][] transpose = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                transpose[i][j] = matrix[j][i];
+            }
+        }
+        System.out.println("Transpose matrix is:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(transpose[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
