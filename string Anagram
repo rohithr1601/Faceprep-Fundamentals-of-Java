@@ -1,0 +1,68 @@
+Description
+
+Write a program to find whether the given string is the anagram of the first string.
+
+Note: An anagram of a string is another string that contains the same characters, only the order of characters can be different.
+Input Format
+
+The input consists of two strings.
+
+
+
+Output Format
+
+The output Print "Anagram", if strings are Anagram otherwise print "Not Anagram"
+
+
+
+Sample Input 0
+
+eat
+
+ate
+
+
+
+Sample Output 0
+
+﻿Anagram
+
+
+Case 1
+Case 2
+Input (stdin)
+eat
+ate
+
+Output (stdout)
+Anagram
+
++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.next();
+        String str2 = sc.next();
+        
+        if (str1.length() != str2.length()) {
+            System.out.println("Not Anagram");
+            return;
+        }
+        
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+        
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+        
+        if (Arrays.equals(charArray1, charArray2)) {
+            System.out.println("Anagram");
+        } else {
+            System.out.println("Not Anagram");
+        }
+    }
+}
