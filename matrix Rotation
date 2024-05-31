@@ -1,0 +1,121 @@
+Matrix Rotation
+
+
+
+Mr. Bean has saved an image in a 2D array and he wants to rotate the image by 90 degrees in clockwise direction. Please help him code for array rotation by 90 degrees in clockwise direction.
+
+
+
+Input Format:
+
+The first line contains the size of the matrix N. 
+
+The next N lines contain the elements of the matrix
+
+
+
+Output Format:
+
+The output prints the rotated matrix
+
+
+
+Sample Input 1:
+
+3
+
+1 2 3
+
+4 5 6
+
+7 8 9
+
+
+
+Sample Output 1:
+
+7 4 1
+
+8 5 2
+
+9 6 3
+
+
+
+Explanation:
+
+The output is the 90-degree clockwise rotated matrix. Try to visualize.
+
+
+
+Sample Input 2:
+
+3
+
+-5 -10 -4 
+
+3 -6 3 
+
+-1 0 -6 
+
+
+
+Sample Output 2:
+
+-1 3 -5
+
+0 -6 -10
+
+-6 3 -4
+
+
+
+Explanation:
+
+The output is the 90-degree clockwise rotated matrix. Try to visualize.
+
+
+Case 1
+Case 2
+Input (stdin)
+3
+-5 -10 -4 
+3 -6 3 
+-1 0 -6 
+
+Output (stdout)
+-1 3 -5
+0 -6 -10
+-6 3 -4
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] a = new int[n][n];
+        int[][] r = new int[n][n];
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                r[j][n - 1 - i] = a[i][j];
+            }
+        }
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                System.out.print(r[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
