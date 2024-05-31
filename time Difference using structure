@@ -1,0 +1,94 @@
+Description
+
+Write a program to calculate the difference between two time periods using structure.
+
+
+
+Input Format
+
+The first input consists of hours of time1
+The second input consists of minutes of time1
+The third input consists of seconds of time1
+The fourth input consists of hours of time2
+The fifth input consists of minutes of time2
+The sixth input consists of seconds of time2
+Note: hours, minutes, and seconds are denoted as structure variables.
+
+
+Output Format
+
+Refer sample output format
+
+
+
+Sample Input 0
+
+12
+
+45
+
+56
+
+2
+
+39
+
+45
+
+
+
+Sample Output 0
+
+﻿TIME DIFFERENCE: 12:45:56 - 2:39:45 = 10:6:11
+
+
+Case 1
+Case 2
+Input (stdin)
+12
+45
+56
+2
+39
+45
+
+Output (stdout)
+TIME DIFFERENCE: 12:45:56 - 2:39:45 = 10:6:11
+
++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+
+public class Main {
+    static class Time {
+        int h1, m1, s1, h2, m2, s2;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Time t = new Time();
+
+        t.h1 = sc.nextInt();
+        t.m1 = sc.nextInt();
+        t.s1 = sc.nextInt();
+        t.h2 = sc.nextInt();
+        t.m2 = sc.nextInt();
+        t.s2 = sc.nextInt();
+
+        int h = t.h1 - t.h2;
+        int m = t.m1 - t.m2;
+        int s = t.s1 - t.s2;
+
+        if (s < 0) {
+            s += 60;
+            m--;
+        }
+        if (m < 0) {
+            m += 60;
+            h--;
+        }
+        
+        System.out.printf("TIME DIFFERENCE: %d:%d:%d - %d:%d:%d = %d:%d:%d",
+                t.h1, t.m1, t.s1, t.h2, t.m2, t.s2, h, m, s);
+    }
+}
