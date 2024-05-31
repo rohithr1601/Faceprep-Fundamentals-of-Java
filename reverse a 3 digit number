@@ -1,0 +1,53 @@
+Description
+
+Write a program to reverse a 3-digit number.
+
+
+
+Input Format
+
+Input consists of an integer.
+
+
+
+Output Format
+
+The output will be the reverse of the input integers.
+
+
+
+Sample Input
+
+456
+
+
+
+Sample Output
+
+654
+
+
+Case 1
+Case 2
+Input (stdin)
+456
+
+Output (stdout)
+654
+
+++++++++++++++++++++++++++++++++++++++++
+
+import java.util.*;
+class Main
+{
+  public static void main(String args[])
+  {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int h = n / 100;
+    int t = (n / 10) % 10;
+    int u = n % 10;
+    int r = (u * 100) + (t * 10) + h;
+    System.out.println(r);
+  }
+}
