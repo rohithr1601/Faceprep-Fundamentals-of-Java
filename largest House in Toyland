@@ -1,0 +1,105 @@
+Description
+
+In the city of Toyland, there are N houses. Noddy is looking for a piece of land in the city to build his house. All the houses in the city lie in a straight line and all of them are given a house number and position of the house from the entry point of the city. Noddy wants to find the house numbers between which he can build the largest house. Write an algorithm to help Noddy to find the house numbers between which he can build his house.
+
+Hint: No two houses will have the same position in case of multiple such answers, print the one with the least distance from the reference point.
+
+
+
+Input Format
+
+The first line of the input consists of an integer num, representing the number of houses (N). The next N lines consist of two space-separated integers – house Num and pos, representing the house number and the position of the houses.
+
+
+
+Constraints
+
+2 < num < 10^6
+1 < house Num < num
+0 < pos < 10^6
+
+
+Output Format
+
+Print two space-separated integers representing the house numbers in ascending order between which the largest plot is available.
+
+
+
+Sample Input
+
+5
+
+3 7
+
+1 9
+
+2 0
+
+5 15
+
+4 30
+
+
+
+Sample Output
+
+4 5
+
+
+Case 1
+Case 2
+Input (stdin)
+5
+3 7
+1 9
+2 0
+5 15
+4 30
+
+Output (stdout)
+4 5
+
+++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] h = new int[n][2];
+        for (int i = 0; i < n; i++) {
+            h[i][0] = sc.nextInt();
+            h[i][1] = sc.nextInt();
+        }
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (h[j][1] > h[j + 1][1]) {
+                  int[] temp = h[j];
+                    h[j] = h[j + 1];
+                    h[j + 1] = temp;
+                }
+            }
+        }
+
+        int m = Integer.MIN_VALUE;
+        int s = -1;
+        int e = -1;
+
+        for (int i = 0; i < n - 1; i++) {
+            int c = h[i + 1][1] - h[i][1];
+            if (c > m) {
+                m = c;
+                s = h[i][0];
+                e = h[i + 1][0];
+            }
+        }
+
+        if (s > e) {
+            int temp = s;
+            s = e;
+            e = temp;
+        }
+
+        System.out.println(s + " " + e);
+    }
+}
