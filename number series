@@ -1,0 +1,66 @@
+Description
+
+Write a program to generate the following series 0,2,8,14,...,34.
+
+
+
+Input Format
+
+The input is an integer that denotes 'n'.
+
+
+
+Output Format
+
+Print the series and refer to the sample output for formatting.
+
+
+
+Sample Input 1
+
+10
+
+
+
+Sample Output 1
+
+0 2 8 14 24 34 48 62 80 98
+
+
+Case 1
+Case 2
+Input (stdin)
+10
+
+Output (stdout)
+0 2 8 14 24 34 48 62 80 98
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int t1 = 0;
+        int t2 = 2;
+        int nt = t2;
+        int d = 6;
+        
+        for (int i = 1; i <= n; i++) {
+            if (i == 1) {
+                System.out.print(t1 + " ");
+            } else if (i == 2) {
+                System.out.print(t2 + " ");
+            } else if (i % 2 != 0) {
+                nt = nt + d;
+                System.out.print(nt + " ");
+            } else {
+                nt = nt + d;
+                d = d + 4;
+                System.out.print(nt + " ");
+            }
+        }
+    }
+}
