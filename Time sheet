@@ -55,3 +55,59 @@ Output (stdout)
 
 +++++++++++++++++++++++++++++++++++++++++
 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sun, mon, tue, wed, thu, fri, sat, rsun, rmon, rtue, rwed, rthu, rfri, rsat, bonus, salary;
+        sun = sc.nextInt();
+        mon = sc.nextInt();
+        tue = sc.nextInt();
+        wed = sc.nextInt();
+        thu = sc.nextInt();
+        fri = sc.nextInt();
+        sat = sc.nextInt();
+        
+        rsun = sun * 150;
+        rsat = sat * 125;
+        
+        if (mon <= 8) {
+            rmon = mon * 100;
+        } else {
+            bonus = mon - 8;
+            rmon = (8 * 100) + (bonus * 115);
+        }
+        
+        if (tue <= 8) {
+            rtue = tue * 100;
+        } else {
+            bonus = tue - 8;
+            rtue = (8 * 100) + (bonus * 115);
+        }
+        
+        if (wed <= 8) {
+            rwed = wed * 100;
+        } else {
+            bonus = wed - 8;
+            rwed = (8 * 100) + (bonus * 115);
+        }
+        
+        if (thu <= 8) {
+            rthu = thu * 100;
+        } else {
+            bonus = thu - 8;
+            rthu = (8 * 100) + (bonus * 115);
+        }
+        
+        if (fri <= 8) {
+            rfri = fri * 100;
+        } else {
+            bonus = fri - 8;
+            rfri = (8 * 100) + (bonus * 115);
+        }
+        
+        salary = rsun + rmon + rtue + rwed + rthu + rfri + rsat;
+        System.out.println(salary);
+    }
+}
